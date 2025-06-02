@@ -1,0 +1,213 @@
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jeo20/hellogit.git
+git push -u origin main
+
+
+LECCIONES DEL CURSO:
+00:00:00 | Introducción
+00:03:15 | 1 - Introducción a Git
+00:10:21 | 2 - Historia de Git
+00:14:35 | 3 - Instalación de Git
+    git --version o git-v (comprobar la version instalada de git)
+    git help git (comando ayuda git)
+	
+00:24:00 | 4 - Comandos básicos de la terminal
+    1 ls
+    2 cd <directorio>
+    3 cd ..
+    4 pwd
+    5 mkdir <nombre>
+    6 touch <nombre>
+    7 rm <nombre>
+    8 cp <nombre> <directorio>
+    9 mv <nombre> <directorio>
+
+00:30:13 | 5 - Configuración de Git (Configuración)
+	windows (C:\Users\jorge\.gitconfig)
+	git config --global user.name "Jorge Orellana" (configuracion global y no por proyecto individual)
+	git config --global user.email jeo20@hotmail.com (defino el correo electronico para git)
+	
+00:36:47 | 6 - "git init" ( Inicialización de un repositorio)
+    git init (inicializa el repositorio local)
+
+00:42:23 | 7 - Ramas en Git
+    git config --global init.defaultBranch main
+    git branch -m main
+
+00:45:21 | 8 - "git add" y "git commit" (Guardado)
+    Git tiene tres estados principales en los que se pueden encontrar tus archivos: 
+    confirmado (committed), modificado (modified), y preparado (staged). 
+    Confirmado(Committed): significa que los datos están almacenados de manera segura en tu base de datos local. 
+    Modificado(Modified): significa que has modificado el archivo pero todavía no lo has confirmado a tu base de datos. 
+    Preparado(Staged): significa que has marcado un archivo modificado en su versión actual para que vaya en tu próxima confirmación.
+
+    1 git status
+    2 git add <archivo>
+    3 git add .
+    4 git commit -m "<mensaje>"
+
+    git add nombre_archivo (seleccionamos a los archivos que pasan a la etapa STAGE que es una etapa intermedia antes de subir al repositorio y suben solo cambios que seleccionemos)
+    git commit -m "nombre del commit" (guarda una foto de los archivos seleccionados con git add)
+    [main (root-commit) 03bbd35] Este es mi primer commit (03bbd35 es el hash(40 caracteres) correspondiente al commit)
+
+
+00:53:27 | 9 - "git log" y "git status" (Estado)
+    git log (se utiliza para mostrar el historial de commits)
+        commit 03bbd35bbf8deeb6e45d0d25a22139627269a7b7 (HEAD -> main)
+        Author: jeo20 <jeo20@hotmail.com>
+        Date:   Tue May 27 13:34:51 2025 -0300
+
+            Este es mi primer commit
+
+            
+    git status (muestra el estado actual del repositorio)
+        commit 312ba29f943ef0c96653af2d4ddf35ae47e9149e (HEAD -> main)
+        Author: jeo20 <jeo20@hotmail.com>
+        Date:   Tue May 27 13:52:03 2025 -0300
+
+            Este es mi segundo commit
+
+        commit 03bbd35bbf8deeb6e45d0d25a22139627269a7b7
+        Author: jeo20 <jeo20@hotmail.com>
+        Date:   Tue May 27 13:34:51 2025 -0300
+
+            Este es mi primer commit
+
+
+00:57:48 | 10 - "git checkout" y "git reset"(Operaciones con ramas)
+
+    1 git checkout <archivo>
+    2 git reset
+    3 git log --graph
+    4 git log --pretty=oneline
+    5 git log --decorate
+    6 git log --graph --pretty=oneline --decorate
+
+    git checkout nombre_archivo (se usa para volver al estado anterior)
+    git reset (vuelve a la  ultima foto del estado)
+
+    git log --graph --decorate --all --oneline (resumido)
+
+
+01:03:02 | 11 - "git alias"
+
+    1 git config
+    2 git config --global alias.tree '<comando>'
+    3 git tree
+
+    git alias (permite crear atajos personalizados (alias) para comandos de Git que usas con frecuencia)
+    git config --global alias.tree "log --graph --decorate --all --oneline"
+    git tree (ejectua "log --graph --decorate --all --oneline")
+
+01:05:05 | 12 - Fichero .gitignore (Ignorar ficheros)
+    1 touch .gitignore
+    2 git add .gitignore
+    
+    El archivo .gitignore en Git es un archivo de texto plano que le dice a Git
+    qué archivos y directorios debe ignorar intencionalmente en tu proyecto.
+    En otras palabras, los archivos y directorios listados en .gitignore no serán rastreados por Git, 
+    lo que significa que no se incluirán en tus commits ni se mostrarán como archivos sin seguimiento
+    
+01:09:04 | 13 - "git diff" (Comparación de commits)
+    1 git diff
+    2 git diff <hash_commit_a> <hash_commit_b>
+    3 git diff --name-only <hash_commit_a> <hash_commit_b>
+
+    git diff te muestra exactamente qué líneas agregaste, qué líneas borraste y qué líneas cambiaron
+    diff --git a/hellogit.py b/hellogit.py        
+    index 8ba5e06..4aa9575 100644
+    --- a/hellogit.py
+    +++ b/hellogit.py
+    @@ -1 +1 @@
+    -print("Hola Git!")
+    +print("New Hello Git with changes")
+
+01:11:54 | 14 - Desplazamiento en una rama
+    1 git checkout <hash>
+    2 git checkout HEAD -- .
+
+01:19:31 | 15 - "git reset --hard" y "git reflog" (Reset y log de referencias )
+    1 git reset --hard
+    2 git reset --hard <hash>
+    3 git reflog
+
+01:27:37 | 16 - "git tag" (Etiquetas)
+    1 git tag
+    2 git tag <nombre_tag>
+    3 git tag <nombre_tag> <hash_commit>
+    4 git show <nombre_tag>
+    5 git checkout <nombre_tag>
+    6 git tag -d <nombre_tag>
+
+01:37:36 | 17 - "git branch" y "git switch" (Creación de ramas)
+    1 git branch
+    2 git branch <nombre_rama>
+    3 git switch <nombre_rama>
+    4 git checkout -b <nombre_rama>
+    5 git switch -c <nombre_rama>
+    
+01:49:06 | 18 - "git merge"(Combinación de ramas)
+    1 git merge <nombre_rama>
+
+01:54:29 | 19 - Resolución de conflictos en Git
+    1 git diff
+    2 git merge --theirs <archivo>
+    3 git merge --mine (o --ours) <archivo>
+
+02:03:42 | 20 - "git stash" (Cambios temporales)
+    1 git stash
+    2 git stash pop
+    3 git stash apply
+    4 git stash list
+    5 git stash drop <stash>
+    6 git stash clear
+
+02:10:11 | 21 - Reintegración de ramas en Git
+    1 git diff <nombre_rama_a_reintegrar>
+    2 git merge <nombre_rama_a_reintegrar>
+
+02:16:26 | 22 - Eliminación de ramas en Git
+    1 git branch --delete <nombre_rama>
+    2 git branch -d <nombre_rama>
+
+02:22:27 | 23 - Introducción a GitHub
+
+02:27:53 | 24 - Primeros pasos en GitHub
+
+02:30:39 | 25 - Repositorio personal
+
+02:42:40 | 26 - Local y Remoto
+
+02:47:32 | 27 - Autenticación SSH en GitHub
+    https://docs.github.com/es/authentication/connecting-to-github-with-ssh
+
+03:00:45 | 28 - Repositorio proyecto
+
+03:02:29 | 29 - "git remote"   
+    1 git remote add origin git@github.com:<usuario_githu\
+    2 b>/<nombre_repositorio>.git
+    3 git push -u origin <rama_principal>
+
+03:07:19 | 30 - Subida de un proyecto a GitHub
+    1 git push
+    2 git pull origin main
+    
+03:11:31 | 31 - "git fetch" y "git pull"
+03:16:41 | 32 - "git clone"
+03:19:55 | 33 - "git push"
+03:21:31 | 34 - "Fork" en GitHub
+03:27:02 | 35 - Flujo colaborativo en GitHub
+03:30:46 | 36 - "Pull Request (PR)" en GitHub
+03:35:30 | 37 - Ejercicio práctico
+03:37:41 | 38 - Resolución de conflictos en Pull Requests
+03:53:31 | 39 - Sincronización de un Fork en GitHub
+03:56:53 | 40 - Markdown en GitHub
+04:00:37 | 41 - Herramientas gráficas (GUI) para Git y GitHub
+04:18:36 | 42 - Git y GitHub "flow"
+04:35:15 | 43 - Ejemplo Gitflow
+04:52:49 | 44 - "git cherry-pick" y "git rebase"
+05:00:05 | 45 - GitHub Pages Y Actions
+05:04:24 | Próximos pasos

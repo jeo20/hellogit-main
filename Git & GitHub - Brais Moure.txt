@@ -1,0 +1,78 @@
+Capítulo 1: Introducción
+Conceptos
+    Git y GitHub
+        Git es una herramienta de control de versiones
+        distribuido, que nos permite a los desarrolladores
+        trabajar en un proyecto sin necesidad de estar
+        conectados a un servidor central. Por otro lado, GitHub
+        es una plataforma en línea que se utiliza para alojar
+        proyectos que se gestionan mediante Git
+    Sistemas de control de versiones
+        Un sistema de control de versiones es una herramienta
+        que se utiliza para mantener un registro de los
+        cambios que se hacen en un proyecto.
+    Ramas
+        Una rama es un nuevo camino asociado al código que se
+        está desarrollando en un proyecto. Las ramas permiten
+        a los desarrolladores trabajar en diferentes partes del
+        proyecto al mismo tiempo, sin interferir en el trabajo de
+        los demás. Una vez que completamos una tarea en una
+        rama, podemos fusionarla con otra rama del proyecto y
+        combinar sus cambios.
+
+Capítulo 2: Historia
+
+Capítulo 3: Instalación
+    $git
+    Comandos
+    1 git
+    2 git --version
+    3 git -v
+    4 git -h
+
+Capítulo 4: Comandos básicos de la terminal
+    Este es un listado con los comandos que más utilizamos
+    habitualmente en Bash:
+    • ls: Muestra una lista con los archivos y carpetas del 
+    directorio actual.
+
+    • cd: Nos permite movernos por los diferentes
+    directorios del sistema de archivos. Por ejemplo,
+    cd Desktop nos lleva al directorio del Escritorio, y
+    cd .. sube un nivel (retrocede) en el sistema de
+    directorios.
+
+    • pwd: Muestra la ruta completa del directorio actual
+    en el sistema de archivos.
+
+    • mkdir: Crea una nueva carpeta en el directorio
+    actual. Por ejemplo, mkdir "Hello Git" crea una
+    carpeta llamada Hello Git.
+
+    • touch: Crea un nuevo archivo vacío en el directorio
+    actual. Por ejemplo, touch hello_git.txt crea un
+    archivo llamado hello_git.txt.
+
+    • rm: Elimina un archivo o carpeta del directorio actual.
+    Por ejemplo, rm hello_git.txt elimina el archivo
+    hello_git.txt.
+
+    • cp: Copia un archivo de un lugar a otro. Por ejemplo,
+    cp hello_git.txt /Desktop/Hello \Git copia el
+    archivo hello_git.txt al directorio Desktop/Hello Git.
+    
+    • mv: Mueve un archivo de un lugar a otro. Por
+    ejemplo, mv hello_git.txt /Desktop/Hello
+    \Git mueve el archivo hello_git.txt al directorio
+    Desktop/Hello Git.
+	
+Capítulo 5: Configuración
+	$git config
+	Comandos
+	1 git config
+	2 git config --global user.name <nombre>
+	3 git config --global user.email <email>
+	
+Capítulo 6: Inicialización de un repositorio $git init
+	Comandos
+	1 git init
